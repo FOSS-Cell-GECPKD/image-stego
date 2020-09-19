@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { Button, Input, TextField } from '@material-ui/core';
-
-import { loadImage, encode, decode } from '../steganography';
-
+import { Button, TextField } from '@material-ui/core';
+import UploadButton from './UploadButton';
+import { encode, decode } from '../steganography';
 
 export default function App() {
 
   const [option, setOption] = useState('home');
 
   function handleClick(event) {
+
     const { name } = event.currentTarget;
     if (name === 'home') {
       setOption('home');
+      document.getElementById('encoded-image').style.display = 'none';
     } else if (name === 'encode') {
       setOption('encode');
     } else if (name === 'decode') {
@@ -20,15 +21,15 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className='content'>
       <h1>Image Steganography</h1>
-      {option === 'home' && <Button name='encode' onClick={handleClick} variant="contained">Encode</Button>}
-      {option === 'home' && <Button name='decode' onClick={handleClick} variant="contained">Decode</Button>}
+      {option === 'home' && <Button style={{margin: '1rem'}} name='encode' onClick={handleClick} variant="contained">Encode</Button>}
+      {option === 'home' && <Button style={{margin: '1rem'}} name='decode' onClick={handleClick} variant="contained">Decode</Button>}
       {option === 'encode' && <TextField variant="outlined" multiline type="text" id="secret" name="secret" placeholder="Enter secret message" />}
-      {option !== 'home' && <Input onChange={loadImage} type="file" id="image" name="filename" />}
-      {option === 'encode' && <Button onClick={encode} variant="contained">Encode</Button>}
-      {option === 'decode' && <Button onClick={decode} variant="contained">Decode</Button>}
-      {option !== 'home' && <Button name='home' onClick={handleClick} variant="contained">Return</Button>}
+      {option !== 'home' && <UploadButton />}
+      {option === 'encode' && <Button style={{margin: '1rem'}} onClick={encode} variant="contained">Encode</Button>}
+      {option === 'decode' && <Button style={{margin: '1rem'}} onClick={decode} variant="contained">Decode</Button>}
+      {option !== 'home' && <Button style={{margin: '1rem'}} name='home' onClick={handleClick} variant="contained">Return</Button>}
       <img id="encoded-image" alt='encoded output'></img>
       <canvas id="canvas"></canvas>
     </div>
