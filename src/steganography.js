@@ -1,36 +1,50 @@
+let isImageUpload = false;
+
 // Loads input image to the Canvas for encoding or decoding
 function loadImage(e) {
   let reader = new FileReader();
   reader.onload = (event) => {
-    let dataUrl = event.target.result;
-    let img = new Image();
-    img.onload = () => {
-      let ctx = document.getElementById('canvas').getContext('2d');
-      ctx.canvas.width = img.width;
-      ctx.canvas.height = img.height;
-      ctx.drawImage(img, 0, 0);
+    let regex = /data:image/;
+    if (regex.test(reader.result)) {      //Checks if the uploaded file is an image 
+      isImageUpload = true;
+      let dataUrl = event.target.result;
+      let img = new Image();
+      img.onload = () => {
+        let ctx = document.getElementById('canvas').getContext('2d');
+        ctx.canvas.width = img.width;
+        ctx.canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+      }
+      img.src = dataUrl;
+    } else {
+      document.getElementById('upload-photo').value = '';
+      alert("Please upload an image!");
     }
-    img.src = dataUrl;
   };
   reader.readAsDataURL(e.target.files[0]);
 };
 
 // Encodes the secret message on the original and displays the encoded image
 function encode() {
-  let message = document.getElementById('secret').value;
-  if (message.length > 1000) {
-    alert("The message is too big to encode");
+  if (isImageUpload) {      //Checks if an image is uploaded  
+    let message = document.getElementById('secret').value;
+    if (message.length > 1000) {
+      alert("The message is too big to encode");
+    } else {
+      document.getElementById('encoded-image').style.display = 'block';
+      document.getElementById('secret').value = '';
+      let output = document.getElementById('encoded-image');
+      let canvas = document.getElementById('canvas');
+      let ctx = canvas.getContext('2d');
+      let imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+      encodeMessage(imgData.data, message);
+      ctx.putImageData(imgData, 0, 0);
+      alert('Image encoded!\n Save below image for further use!');
+      output.src = canvas.toDataURL();
+    }
   } else {
-    document.getElementById('encoded-image').style.display = 'block';
-    document.getElementById('secret').value = '';
-    let output = document.getElementById('encoded-image');
-    let canvas = document.getElementById('canvas');
-    let ctx = canvas.getContext('2d');
-    let imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-    encodeMessage(imgData.data, message);
-    ctx.putImageData(imgData, 0, 0);
-    alert('Image encoded!\n Save below image for further use!');
-    output.src = canvas.toDataURL();
+    document.getElementById('upload-photo').value = '';
+    alert("Please upload an image!");
   }
 };
 
@@ -39,7 +53,7 @@ function decode() {
   let ctx = document.getElementById('canvas').getContext('2d');
   let imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
   let message = decodeMessage(imgData.data);
-  alert(message);
+  alert("The message encode is:\n" + message);
 };
 
 // Encodes message using LSB method
