@@ -1,3 +1,4 @@
+// Loads input image to the Canvas for encoding or decoding
 function loadImage(e) {
   let reader = new FileReader();
   reader.onload = (event) => {
@@ -14,36 +15,41 @@ function loadImage(e) {
   reader.readAsDataURL(e.target.files[0]);
 };
 
+// Encodes the secret message on the original and displays the encoded image
 function encode() {
-  document.getElementById('encoded-image').style.display = 'block';
   let message = document.getElementById('secret').value;
-  document.getElementById('secret').value = '';
-  let output = document.getElementById('encoded-image');
-  let canvas = document.getElementById('canvas');
-  let ctx = canvas.getContext('2d');
-  let imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-  let hash = ' ';
-  encodeMessage(imgData.data, hash, message);
-  ctx.putImageData(imgData, 0, 0);
-  alert('Image encoded!\n Save below image for further use!');
-  output.src = canvas.toDataURL();
+  if (message.length > 1000) {
+    alert("The message is too big to encode");
+  } else {
+    document.getElementById('encoded-image').style.display = 'block';
+    document.getElementById('secret').value = '';
+    let output = document.getElementById('encoded-image');
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+    let imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+    encodeMessage(imgData.data, message);
+    ctx.putImageData(imgData, 0, 0);
+    alert('Image encoded!\n Save below image for further use!');
+    output.src = canvas.toDataURL();
+  }
 };
 
+// Decodes the secret message from the canvas and alerts it to the user
 function decode() {
-  let password = ' '; // document.getElementById('decode-password').value;
   let ctx = document.getElementById('canvas').getContext('2d');
   let imgData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-  let message = decodeMessage(imgData.data, password);
+  let message = decodeMessage(imgData.data);
   alert(message);
 };
 
-function encodeMessage(colors, hash, message) {
+// Encodes message using LSB method
+function encodeMessage(colors, message) {
   let messageBits = getBitsFromNumber(message.length);
   messageBits = messageBits.concat(getMessageBits(message));
   let history = [];
   let pos = 0;
   while (pos < messageBits.length) {
-    let loc = getNextLocation(history, hash, colors.length);
+    let loc = getNextLocation(history, colors.length);
     colors[loc] = setBit(colors[loc], 0, messageBits[pos]);
     while ((loc + 1) % 4 !== 0) {
       loc++;
@@ -53,9 +59,10 @@ function encodeMessage(colors, hash, message) {
   }
 };
 
-function decodeMessage(colors, hash) {
+// Decodes message from the image
+function decodeMessage(colors) {
   let history = [];
-  let messageSize = getNumberFromBits(colors, history, hash);
+  let messageSize = getNumberFromBits(colors, history);
   if ((messageSize + 1) * 16 > colors.length * 0.75) {
     return '';
   }
@@ -64,7 +71,7 @@ function decodeMessage(colors, hash) {
   }
   let message = [];
   for (let i = 0; i < messageSize; i++) {
-    let code = getNumberFromBits(colors, history, hash);
+    let code = getNumberFromBits(colors, history);
     message.push(String.fromCharCode(code));
   }
   return message.join('');
@@ -89,11 +96,11 @@ function getBitsFromNumber(number) {
 };
 
 // returns the next 2-byte number
-function getNumberFromBits(bytes, history, hash) {
+function getNumberFromBits(bytes, history) {
   let number = 0,
     pos = 0;
   while (pos < 16) {
-    let loc = getNextLocation(history, hash, bytes.length);
+    let loc = getNextLocation(history, bytes.length);
     let bit = getBit(bytes[loc], 0);
     number = setBit(number, pos, bit);
     pos++;
@@ -112,13 +119,10 @@ function getMessageBits(message) {
 };
 
 // gets the next location to store a bit
-function getNextLocation(history, hash, total) {
-  let pos = history.length;
-  let loc = Math.abs(hash[pos % hash.length] * (pos + 1)) % total;
+function getNextLocation(history, total) {
+  let loc = 0;
   while (true) {
-    if (loc >= total) {
-      loc = 0;
-    } else if (history.indexOf(loc) >= 0) {
+    if (history.indexOf(loc) >= 0) {
       loc++;
     } else if ((loc + 1) % 4 === 0) {
       loc++;
@@ -129,4 +133,4 @@ function getNextLocation(history, hash, total) {
   }
 };
 
-export {decode, encode, loadImage};
+export { decode, encode, loadImage };
