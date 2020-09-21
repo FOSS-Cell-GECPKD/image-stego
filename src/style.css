@@ -1,10 +1,14 @@
 
 body {
-    background-color: #eee;
+    /* background: rgb(239,238,248); */
+    background: linear-gradient(90deg, rgba(239,238,248,1) 0%, rgba(149,149,149,1) 51%, rgba(255,255,255,1) 100%);
 }
 
 h1 {
     color: purple;
+    text-shadow: 1px 1px rgba(239,238,248,1);
+    font-size: 55px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
