@@ -1,4 +1,7 @@
-# Image-steganography
+# image-stego
+
+[![Join the chat at https://gitter.im/FOSS-Cell-GECPKD/image-stego](https://badges.gitter.im/FOSS-Cell-GECPKD/image-stego.svg)](https://gitter.im/FOSS-Cell-GECPKD/image-stego?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <br>
 Image steganography refers to hiding information i.e. text, images or audio files in another image or video files. The current project aims to use steganography for an image with text using bit replacing technique with React. This hidden information can be retrieved only through proper decoding technique.
 <br>
