@@ -99,8 +99,16 @@ Technique of Encryption
 To get this project, Follow the steps (It's Open and free :P )
 <h4> 1) Fork it to your Repo</h4>
 <h4> 2) Clone it</h4>
+<p>
+After you cloned the Repo in your local machine
+Please install the requirments (Exclude those which you already have)
+</p>
+<ul>
+<li>Download Node.js
+<li>Open the terminal/cmd/bash enter <b>npm -v</b>/ <b>npm --version</b> to check the version
+<li>Enter <b>npm i</b> to install the needed node modules (Wait for completion)
+<li>Enter <b>npm start</b> (Wait for some time and your localhost will wake up)
 <h4> 3) Bug?, Solve and give a PR :) </h4>
 <img src="https://miro.medium.com/max/624/1*IelAxduwS_YtpsrlRe1d0Q.png">
 
 <hr>
-[![Join the chat at https://gitter.im/FOSS-Cell-GECPKD/image-stego](https://badges.gitter.im/FOSS-Cell-GECPKD/image-stego.svg)](https://gitter.im/FOSS-Cell-GECPKD/image-stego?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
