@@ -26,13 +26,13 @@ Technique of Encryption
   <h4>LSB based Image steganography:</h4>
     <p>  LSB-Steganography is a steganography technique in which we hide messages inside an image by replacing Least significant bit of image with the bits of message to be hidden.As the LSB is only changed, the human eys cannot detect the changes in it. </p>
     <ul>
-      <h2>Encryption Algorithm</h2>
+      <h3>Encryption Algorithm</h3>
        <li>Begin
         <li>Input: Cover_Image, Secret_Message<!--Secret key--> ;
-        <li>Transfer Secret_Message into Text_File;
+        <li>Transfer Secret_Message into Text;
   <!--  <li>Zip Text_File;   -->
   <!--  <li>Convert Secret_Key into Binary_Codes; --> 
-        <li>Convert Text_File to Binary_Codes;
+        <li>Convert Text to Binary_Codes;
         <li>Set BitsPerUnit to Zero;
         <li>Encode Message to Binary_Codes;
         <li>Add by 2 unit for bitsPerUnit;
@@ -40,15 +40,15 @@ Technique of Encryption
        <li>End
     </ul>
     <ul>
-      <h2>Decryption Algorithm</h2>
+      <h3>Decryption Algorithm</h3>
        <li>Begin
         <li>Input: Stego_Image
 <!--    <li>Compare Secret_Key;  -->
        <li>Calculate BitsPerUnit;
         <li>Decode All_Binary_Codes;
         <li>Shift by 2 unit for bitsPerUnit;
-        <li>Convert Binary_Codes to Text_File;
-       <li>Open Text_File;
+        <li>Convert Binary_Codes to Text;
+       <li>Open Text;
         <li>Output Secret_Message;
        <li>End
     </ul>
@@ -100,9 +100,9 @@ Technique of Encryption
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 To get this project, Follow the steps (It's Open and free :P )
-<li>1. Fork the Project
+1. Fork the Project
   <br>
-<li>2. Clone it <code>git clone https://github.com/yourrepo/image-stego.git</code>
+2. Clone it <code>git clone https://github.com/yourrepo/image-stego.git</code>
 <p>
   After cloning, Setup the local machine with requirements (Exclude those which you already have)
   <ul>
