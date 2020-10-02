@@ -96,19 +96,31 @@ Technique of Encryption
 </code>
 </pre>
 <hr>
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 To get this project, Follow the steps (It's Open and free :P )
-<h4> 1) Fork it to your Repo</h4>
-<h4> 2) Clone it</h4>
+<li>1. Fork the Project
+  <br>
+<li>2. Clone it <code>git clone https://github.com/yourrepo/image-stego.git</code>
 <p>
-After you cloned the Repo in your local machine
-Please install the requirments (Exclude those which you already have)
+  After cloning process, Setup the local machine with requirements (Exclude those which you already have)
+  <ul>
+    <li>Download Node.js</li>
+    <li>Open the terminal/cmd/bash enter <b>npm -v</b>/ <b>npm --version</b> to check the version</li>
+    <li>Enter <b>npm i</b> to install the needed node modules (Wait for completion)</li>
+    <li>Enter <b>npm start</b> (Wait for some time and your localhost will wake up)</li>
+  </ul>
 </p>
-<ul>
-<li>Download Node.js
-<li>Open the terminal/cmd/bash enter <b>npm -v</b>/ <b>npm --version</b> to check the version
-<li>Enter <b>npm i</b> to install the needed node modules (Wait for completion)
-<li>Enter <b>npm start</b> (Wait for some time and your localhost will wake up)
-<h4> 3) Bug?, Solve and give a PR :) </h4>
+<br>
+3. Create your Feature Branch <code>git checkout -b feature/changedFeature</code>
+<br>
+4. Commit your Changes <code>git commit -m 'Add some AmazingFeature'</code>
+<br>
+5. Push to the Branch <code>git push origin feature/changedFeature</code>
+<br>
+6. Open a Pull Request
+ <br>
 <img src="https://miro.medium.com/max/624/1*IelAxduwS_YtpsrlRe1d0Q.png">
 
 <hr>
