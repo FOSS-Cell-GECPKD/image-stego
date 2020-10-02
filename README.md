@@ -104,10 +104,8 @@ To get this project, Follow the steps (It's Open and free :P )
   <br>
 <li>2. Clone it <code>git clone https://github.com/yourrepo/image-stego.git</code>
 <p>
-  After cloning process, Setup the local machine with requirements (Exclude those which you already have)
+  After cloning, Setup the local machine with requirements (Exclude those which you already have)
   <ul>
-    <li>Download Node.js</li>
-    <li>Open the terminal/cmd/bash enter <b>npm -v</b>/ <b>npm --version</b> to check the version</li>
     <li>Enter <b>npm i</b> to install the needed node modules (Wait for completion)</li>
     <li>Enter <b>npm start</b> (Wait for some time and your localhost will wake up)</li>
   </ul>
