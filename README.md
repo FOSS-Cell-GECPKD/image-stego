@@ -19,11 +19,11 @@ Languages used:
    </ul>
     
  </ul>
- Working Diagram
+ <h3>Working Diagram</h3>
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/2-72.png">
 Technique of Encryption
 <p>
-  <h4>LSB based Image steganography:</h4>
+  <h3>LSB based Image steganography:</h3>
     <p>  LSB-Steganography is a steganography technique in which we hide messages inside an image by replacing Least significant bit of image with the bits of message to be hidden.As the LSB is only changed, the human eys cannot detect the changes in it. </p>
     <ul>
       <h3>Encryption Algorithm</h3>
@@ -96,12 +96,13 @@ Technique of Encryption
 </code>
 </pre>
 <hr>
-## Contributing
+<h3>Contributions</h3>
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
 To get this project, Follow the steps (It's Open and free :P )
-1. Fork the Project
-  <br>
+<p>
+<ul>1. Fork the Project
+<br> <br>
 2. Clone it <code>git clone https://github.com/yourrepo/image-stego.git</code>
 <p>
   After cloning, Setup the local machine with requirements (Exclude those which you already have)
@@ -110,15 +111,14 @@ To get this project, Follow the steps (It's Open and free :P )
     <li>Enter <b>npm start</b> (Wait for some time and your localhost will wake up)</li>
   </ul>
 </p>
-<br>
 3. Create your Feature Branch <code>git checkout -b feature/changedFeature</code>
-<br>
+<br> <br>
 4. Commit your Changes <code>git commit -m 'Add some AmazingFeature'</code>
-<br>
+<br> <br>
 5. Push to the Branch <code>git push origin feature/changedFeature</code>
-<br>
+<br> <br>
 6. Open a Pull Request
- <br>
+ <br> <br>
 <img src="https://miro.medium.com/max/624/1*IelAxduwS_YtpsrlRe1d0Q.png">
-
+</p>
 <hr>
