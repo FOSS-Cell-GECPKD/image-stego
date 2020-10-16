@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <div className='content'>
-      <h1>Image Steganography</h1>
+      <h1>IMAGE<span id="word"> STEGO</span></h1>
       {option === 'home' && <Button style={{margin: '1rem'}} name='encode' onClick={handleClick} variant="contained">Encode</Button>}
       {option === 'home' && <Button style={{margin: '1rem'}} name='decode' onClick={handleClick} variant="contained">Decode</Button>}
       {option === 'encode' && <TextField variant="outlined" multiline type="text" id="secret" name="secret" placeholder="Enter secret message" />}
