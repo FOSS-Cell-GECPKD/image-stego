@@ -31,6 +31,7 @@ h1
     text-align: center;
 }
 
+
 .content
 {
     text-align: center;
@@ -38,9 +39,11 @@ h1
 
 img
 {
+    max-width: 300px;
+    max-height: 300px;
     display: block;
     margin: 0 auto;
-    width: 30rem;
+    width: auto;
     height: auto;
 }
 
