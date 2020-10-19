@@ -1,28 +1,53 @@
-
-body {
-    /* background: rgb(239,238,248); */
-    background: linear-gradient(90deg, rgba(239,238,248,1) 0%, rgba(149,149,149,1) 51%, rgba(255,255,255,1) 100%);
+@font-face 
+{
+    font-family: 'lulo_cleanoutline_bold';
+    src: url('lulocleanoutlinebold-webfont.woff2') format('woff2'), url('lulocleanoutlinebold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-h1 {
-    color: purple;
-    text-shadow: 1px 1px rgba(239,238,248,1);
-    font-size: 55px;
-    margin-bottom: 40px;
+body
+{
+    
+    background-color: #aa96da;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+}
+
+h1
+{
+    font-family: 'lulo_cleanoutline_bold';
+    font-size: 6vw;
+    color: #000;
     text-align: center;
 }
 
-.content {
+#word
+{
+    font-family: 'lulo_cleanoutline_bold';
+    font-size: 6vw;
+    color: white;
     text-align: center;
 }
 
-img {
+
+.content
+{
+    text-align: center;
+}
+
+img
+{
+    max-width: 300px;
+    max-height: 300px;
     display: block;
     margin: 0 auto;
-    width: 30rem;
+    width: auto;
     height: auto;
 }
 
-canvas, img {
+canvas, img
+{
     display: none;
 }
