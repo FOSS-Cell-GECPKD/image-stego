@@ -1,25 +1,25 @@
 # image-stego
 
-[![Join the chat at https://gitter.im/FOSS-Cell-GECPKD/image-stego](https://badges.gitter.im/FOSS-Cell-GECPKD/image-stego.svg)](https://gitter.im/FOSS-Cell-GECPKD/image-stego?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![License](https://img.shields.io/github/license/FOSS-Cell-GECPKD/image-stego?style=for-the-badge)](https://github.com/FOSS-Cell-GECPKD/image-stego/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues/FOSS-Cell-GECPKD/image-stego?style=for-the-badge)](https://github.com/FOSS-Cell-GECPKD/image-stego/issues)
+[![Chat on Gitter](https://img.shields.io/badge/chat--on-gitter-brightgreen?style=for-the-badge&logo=appveyor)](https://gitter.im/FOSS-Cell-GECPKD/image-stego)
+
+## About
+<br>
+An Image Steganography (hiding/encoding information(text) in an image) web app.
 
 <br>
-Image steganography refers to hiding information i.e. text, images or audio files in another image or video files. The current project aims to use steganography for an image with text using bit replacing technique with React. This hidden information can be retrieved only through proper decoding technique.
-<br>
-Languages used:
+
+Frameworks used:
 <ul>
   <li>
-    <a href="https://reactjs.org/">  React Js </a> 
-    <ul>
-      <li>Javascript</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>
-      <a href="https://material-ui.com/"> Material UI Framework </a> 
+    <a href="https://reactjs.org/">  React Js </a>
+   </li>
+   <li>
+    <a href="https://material-ui.com/"> Material UI Framework </a> 
   </li>
-   </ul>
-    
- </ul>
- <h3>Working Diagram</h3>
+</ul>
+<h3>Working Diagram</h3>
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/2-72.png">
 Technique of Encryption
 <p>
@@ -30,8 +30,6 @@ Technique of Encryption
        <li>Begin
         <li>Input: Cover_Image, Secret_Message<!--Secret key--> ;
         <li>Transfer Secret_Message into Text;
-  <!--  <li>Zip Text_File;   -->
-  <!--  <li>Convert Secret_Key into Binary_Codes; --> 
         <li>Convert Text to Binary_Codes;
         <li>Set BitsPerUnit to Zero;
         <li>Encode Message to Binary_Codes;
@@ -43,7 +41,6 @@ Technique of Encryption
       <h3>Decryption Algorithm</h3>
        <li>Begin
         <li>Input: Stego_Image
-<!--    <li>Compare Secret_Key;  -->
        <li>Calculate BitsPerUnit;
         <li>Decode All_Binary_Codes;
         <li>Shift by 2 unit for bitsPerUnit;
@@ -122,3 +119,6 @@ To get this project, Follow the steps (It's Open and free :P )
 <img src="https://miro.medium.com/max/624/1*IelAxduwS_YtpsrlRe1d0Q.png">
 </p>
 <hr>
+
+## License
+Licensed under the [MIT License](LICENSE).
