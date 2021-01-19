@@ -10,7 +10,7 @@ An Image Steganography (hiding/encoding information(text) in an image) web app.
 
 <br>
 
-Frameworks used:
+<h4>Frameworks used:</h4>
 <ul>
   <li>
     <a href="https://reactjs.org/">  React Js </a>
@@ -21,9 +21,8 @@ Frameworks used:
 </ul>
 <h3>Working Diagram</h3>
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/2-72.png">
-Technique of Encryption
-<p>
-  <h3>LSB based Image steganography:</h3>
+
+  <h3>LSB based Image steganography</h3>
     <p>  LSB-Steganography is a steganography technique in which we hide messages inside an image by replacing Least significant bit of image with the bits of message to be hidden.As the LSB is only changed, the human eys cannot detect the changes in it. </p>
     <ul>
       <h3>Encryption Algorithm</h3>
