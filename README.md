@@ -99,12 +99,12 @@ To get this project, Follow the steps (It's Open and free :P )
 <p>
 <ul>1. Fork the Project
 <br> <br>
-2. Clone it <code>git clone https://github.com/yourrepo/image-stego.git</code>
-<p>
-  After cloning, Setup the local machine with requirements (Exclude those which you already have)
+2. Clone the project  <code>git clone https://github.com/yourrepo/image-stego.git</code>
+  <br>
+  After cloning, Setup the local machine with requirements 
   <ul>
-    <li>Enter <b>npm i</b> to install the needed node modules (Wait for completion)</li>
-    <li>Enter <b>npm start</b> (Wait for some time and your localhost will wake up)</li>
+    <li>Enter <b>npm i</b> to install the required modules</li>
+    <li>Enter <b>npm start</b> to run the project locally</li>
   </ul>
 </p>
 3. Create your Feature Branch <code>git checkout -b feature/changedFeature</code>
