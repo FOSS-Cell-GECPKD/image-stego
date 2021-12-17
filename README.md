@@ -121,3 +121,6 @@ To get this project, Follow the steps (It's Open and free :P )
 
 ## License
 Licensed under the [MIT License](LICENSE).
+
+This project was a part of FOSS OpenHack '20: https://openhack.gitbook.io/openhack-20/.
+
